@@ -24,6 +24,7 @@ div img{
     max-width: 992px;
     margin: auto;
     width: 100%;
+    min-width: 320px;
 }
 
 header{
@@ -56,8 +57,9 @@ header .list-items{
     justify-content: space-between;
 }
 
-.texto-apresentacao{
+.apresentacao .texto-apresentacao{
     min-height: 200px;
+    width: 100%;
 }
 
 .texto-apresentacao h1{
@@ -129,7 +131,7 @@ header .list-items{
 
 .list-servicos{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 50px;
 }
 
@@ -167,11 +169,18 @@ header .list-items{
 #planos{
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 50px;
+}
+
+#planos h2{
+    font-size: 32px;
+    color: #122a57;
 }
 
 .list-planos{
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
 }
 
 .item-plano{
@@ -179,6 +188,7 @@ header .list-items{
     border: 5px solid #122a57;
     margin-right: 20px;
     padding: 10px;
+    max-width: 240px;
 }
 
 .item-plano .btn{
@@ -191,6 +201,7 @@ header .list-items{
     font-size: 24px;
     flex-direction: column;
     text-align: center;
+    margin-top: 20px;
 }
 
 .item-plano h3::after{
@@ -205,4 +216,77 @@ header .list-items{
     display: flex;
     padding: 10px 20px;
     flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.item-plano ul li{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.item-plano ul li::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #122a57;
+    margin-right: 5px;
+}
+
+footer{
+    display: flex;
+    background-color: #122a57;
+    height: 70px;
+    align-items: center;
+}
+
+footer .footer{
+    justify-content: space-between;
+    color: white;
+}
+
+/*mobile*/
+@media(max-width: 992px){
+    .flex-container{
+        flex-direction: column;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+    }
+
+    .apresentacao .texto-apresentacao{
+        width: 100%;
+    }
+
+    #quem-somos{
+        flex-direction: column-reverse;
+    }
+
+    #quem-somos img{
+        min-width: 320px;
+        margin: auto;
+    }
+
+    .list-servicos{
+        flex-direction: column;
+    }
+
+    .item-servico{
+        width: 50%;
+        margin: auto;
+    }
+
+    .list-planos{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .list-planos .item-plano{
+        max-width: 90%;
+        margin: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
